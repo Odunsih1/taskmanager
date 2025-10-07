@@ -1,4 +1,4 @@
-# TaskManager — Next.js + Supabase Task Manager App
+# Task Pro — Next.js + Supabase Task Manager App
 
 > A modern, minimal, and responsive **Task Manager Web App** built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, **shadcn/ui**, **Supabase**, and **Zustand**.  
 > Designed for clarity, performance, and simplicity.
@@ -7,7 +7,7 @@
 
 ## Overview
 
-**TaskManager** lets users securely **sign up, log in, and manage personal tasks** with a clean UI and smooth experience.  
+**Task Pro** lets users securely **sign up, log in, and manage personal tasks** with a clean UI and smooth experience.  
 Each user’s tasks are private and synced in real-time with **Supabase**.  
 This project demonstrates a complete **full-stack Next.js** setup with authentication, database integration, and state management.
 
@@ -61,8 +61,10 @@ yarn install
 
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-supabase-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+DATABASE_URL="postgres://[DB-USER].[PROJECT-REF]:[PRISMA-PASSWORD]@aws-0-us-east-1.pooler.supabase.com:6543/postgres?pgbouncer=true"
+DIRECT_URL="postgres://[DB-USER].[PROJECT-REF]:[PRISMA-PASSWORD]@aws-0-us-east-1.pooler.supabase.com:5432/postgres"
 ```
 
 ## Project Structure
@@ -70,31 +72,31 @@ SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 prisma
 └── schema.prisma
 src
- ├──app/
- │  ├── (auth)/
- │  │ └── page
- │  ├── (tasks)/
- │  │ └── page
- │  ├── global.css
- │  ├── layout.tsx
- │  └── page.tsx
- ├──components/
- │  ├── layout/
- │  ├── ui/
- │  ├── AddTaskDialogue.tsx
- │  ├── EmptyState.tsx
- │  ├── Navbar.tsx
- │  ├── SearchBar.tsx
- │  ├── TaskCard.tsx
- │  └── TaskSkeleton.tsx
- ├──integration/
- │  └── supabase
- │  ├── client.ts
- │  └──type.ts
- ├──lib/
- │  ├── supabase.ts
- │  ├── zustand/
- │  ├── utils.ts
- │  └── globals.css
- └──store/
-    └── taskStore.ts
+├──app/
+│ ├── (auth)/
+│ │ └── page
+│ ├── (tasks)/
+│ │ └── page
+│ ├── global.css
+│ ├── layout.tsx
+│ └── page.tsx
+├──components/
+│ ├── layout/
+│ ├── ui/
+│ ├── AddTaskDialogue.tsx
+│ ├── EmptyState.tsx
+│ ├── Navbar.tsx
+│ ├── SearchBar.tsx
+│ ├── TaskCard.tsx
+│ └── TaskSkeleton.tsx
+├──integration/
+│ └── supabase
+│ ├── client.ts
+│ └──type.ts
+├──lib/
+│ ├── supabase.ts
+│ ├── zustand/
+│ ├── utils.ts
+│ └── globals.css
+└──store/
+└── taskStore.ts
