@@ -7,7 +7,6 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-
 interface NavbarProps {
   showLogout?: boolean;
 }
@@ -41,7 +40,7 @@ const Navbar = ({ showLogout = false }: NavbarProps) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-foreground">TaskManager</h1>
+        <h1 className="text-xl font-semibold text-foreground">Task Pro</h1>
         {showLogout && (
           <Button
             variant="ghost"
