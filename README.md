@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TaskManager — Next.js + Supabase Task Manager App
 
-## Getting Started
+> A modern, minimal, and responsive **Task Manager Web App** built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, **shadcn/ui**, **Supabase**, and **Zustand**.  
+> Designed for clarity, performance, and simplicity.
 
-First, run the development server:
+---
+
+## Overview
+
+**TaskManager** lets users securely **sign up, log in, and manage personal tasks** with a clean UI and smooth experience.  
+Each user’s tasks are private and synced in real-time with **Supabase**.  
+This project demonstrates a complete **full-stack Next.js** setup with authentication, database integration, and state management.
+
+---
+
+## Features
+
+Email + Password Authentication (Supabase Auth)  
+ Create, View, Edit and Delete Tasks  
+ User-Specific Data Isolation  
+ Real-Time Database Sync with Supabase  
+ State Management with Zustand  
+ Accessible UI Components (shadcn/ui)  
+ Responsive Design using Tailwind CSS  
+ 100% TypeScript — Safe, Scalable, and Clean
+
+---
+
+## Tech Stack
+
+| Technology                       | Purpose                            |
+| -------------------------------- | ---------------------------------- |
+| **Next.js 15.5.4+ (App Router)** | Full-stack React framework         |
+| **TypeScript**                   | Static type checking               |
+| **Tailwind CSS**                 | Utility-first styling              |
+| **shadcn/ui**                    | Accessible, reusable UI components |
+| **Supabase**                     | Auth & database (PostgreSQL)       |
+| **Zustand**                      | Global state management            |
+| **Prisma ORM**                   | Schema management and migrations   |
+
+---
+
+## Setup & Installation
+
+### 1️ Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/taskmanager.git
+cd taskmanager
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2 Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+# or
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3 Create a .env.local file:
 
-## Learn More
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+prisma
+└── schema.prisma
+src
+ ├──app/
+ │  ├── (auth)/
+ │  │ └── page
+ │  ├── (tasks)/
+ │  │ └── page
+ │  ├── global.css
+ │  ├── layout.tsx
+ │  └── page.tsx
+ ├──components/
+ │  ├── layout/
+ │  ├── ui/
+ │  ├── AddTaskDialogue.tsx
+ │  ├── EmptyState.tsx
+ │  ├── Navbar.tsx
+ │  ├── SearchBar.tsx
+ │  ├── TaskCard.tsx
+ │  └── TaskSkeleton.tsx
+ ├──integration/
+ │  └── supabase
+ │  ├── client.ts
+ │  └──type.ts
+ ├──lib/
+ │  ├── supabase.ts
+ │  ├── zustand/
+ │  ├── utils.ts
+ │  └── globals.css
+ └──store/
+    └── taskStore.ts
